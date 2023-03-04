@@ -7,6 +7,6 @@ npm run start
 
 # Stop the Dev server
 in the terminal window press the key combination:
-<CTRL>c
+control-c
 
 
