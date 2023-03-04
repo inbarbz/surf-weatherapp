@@ -9,4 +9,6 @@ npm run start
 in the terminal window press the key combination:
 control-c
 
+# Home page components
 
+![Home page Components](homePageComponents.png "React Components").
