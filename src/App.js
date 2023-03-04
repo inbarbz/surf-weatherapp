@@ -1,12 +1,14 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import { Container } from 'react-bootstrap';
 import { HomePage } from './components/HomePage';
 
 function App() {
+
   return (
-    <div className="App">
-      Render App!!!
+    <Container style={{ margin: "0px", padding: "0px" }}>
       <HomePage />
-    </div>
+    </Container>
   );
 }
 
