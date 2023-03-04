@@ -1,15 +1,21 @@
 import { Component } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import { PlaceHolder } from "../PlaceHolder";
+import { Location } from "../Location";
+import { WeatherIndex } from "../WeatherIndex";
 
 export class UpperWeatherData extends Component {
-
+    //className="upper-weather-class"
     render() {
         return (
-            <Container className="upper-weather-class">
+            <Container>
                 <Row>
-                    <Col>
-                        <PlaceHolder label="UpperWeatherData" />
+                    <Col style={{ textAlign: "center", marginTop: "80px" }}>
+                        <Location location="Brighton Beach" />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col style={{ textAlign: "center", marginTop: "5px" }}>
+                        <WeatherIndex index="30" />
                     </Col>
                 </Row>
             </Container>

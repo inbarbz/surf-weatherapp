@@ -5,10 +5,11 @@ import { HiOutlineHome } from 'react-icons/hi';
 
 export class NavBar extends Component {
 
+    // className="navbar-class"
 
     render() {
         return (
-            <Container className="navbar-class">
+            <Container>
                 <Row style={{ padding: "0px", margin: "0px" }}>
                     <Col xs={2}> <HiOutlineHome style={{ marginTop: "30px", marginLeft: "30px" }} /> </Col>
                     <Col xs={8}>  </Col>

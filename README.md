@@ -1,4 +1,9 @@
 
+# Setup the first time
+#### install "node" on your laptop (on Mac use "brew install node" and watch the instructions)
+#### Clone the project
+#### Open a terminal and run "npm install"
+
 # Running Dev server
 open a terminal window in your Visual Code IDE and execute the command:
 npm run start

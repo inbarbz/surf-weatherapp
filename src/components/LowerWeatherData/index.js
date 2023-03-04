@@ -1,15 +1,21 @@
 import { Component } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import { PlaceHolder } from "../PlaceHolder";
 
 export class LowerWeatherData extends Component {
 
+
+    // className="lower-weather-class" 
     render() {
+        let waveHeight = this.props.wave_height;
+        let waveDirection = this.props.wave_direction;
+        console.log("LowerWeatherData.waveHeight = " + waveHeight);
         return (
-            <Container className="lower-weather-class">
+            <Container>
                 <Row>
                     <Col>
-                        <PlaceHolder label="LowerWeatherData" />
+                        Wave Height: {waveHeight}m
+                        <br />
+                        Wave Direction: {waveDirection}°
                     </Col>
                 </Row>
             </Container>
