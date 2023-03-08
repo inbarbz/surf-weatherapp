@@ -37,6 +37,7 @@ export class HomePage extends Component {
                 this.setState({ isLoaded: true, daily: result.daily })
             })
     }
+    print("Pushj")
 
     getWaveHeight() {
         if (this.state.isLoaded) {
