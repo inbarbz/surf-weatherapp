@@ -12,7 +12,11 @@ export class HomePage extends Component {
     }
 
     componentDidMount() {
-        this.fetchSurfData("Brighton");
+        let locationName = "Brighton";
+        let latitude = this.locations[locationName].latitude;
+        let longitude = this.locations[locationName].longitude;
+        this.fetchSurfData(locationName);
+        this.fetchUVIndex(latitude, longitude);
     }
 
     locations = {
@@ -38,6 +42,18 @@ export class HomePage extends Component {
             })
     }
 
+    fetchUVIndex(latitude, longitude) {
+        let url = `https://api.open-meteo.com/v1/uv?latitude=${latitude}&longitude=${longitude}`;
+        console.log("fetching UV index from api...");
+        console.log(url);
+        fetch(url)
+            .then(res => res.json())
+            .then((result) => {
+                console.log(result);
+                this.setState({ uvIndex: result.value })
+            })
+    }
+
     getWaveHeight() {
         if (this.state.isLoaded) {
             console.log("this.state.daily.wave_height_max[0] is " + this.state.daily.wave_height_max[0]);
@@ -55,6 +71,14 @@ export class HomePage extends Component {
         }
     }
 
+    getUVIndex() {
+        if (this.state.uvIndex !== undefined) {
+            return this.state.uvIndex;
+        } else {
+            return "-";
+        }
+    }
+
     render() {
         console.log("Render HomePage");
         return (
@@ -67,7 +91,7 @@ export class HomePage extends Component {
 
                 <Row>
                     <Col>
-                        <UpperWeatherData />
+                        <UpperWeatherData uvIndex={this.getUVIndex()} />
                     </Col>
                 </Row>
 

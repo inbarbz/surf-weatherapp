@@ -18,6 +18,11 @@ export class UpperWeatherData extends Component {
                         <WeatherIndex index="30" />
                     </Col>
                 </Row>
+                <Row>
+                    <Col style={{ textAlign: "center", marginTop: "5px" }}>
+                        <WeatherIndex index={this.props.uvIndex} />
+                    </Col>
+                </Row>
             </Container>
         );
     }
